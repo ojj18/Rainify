@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "895812912916",
+    "project_id": "rainify-4d64e",
+    "storage_bucket": "rainify-4d64e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:895812912916:android:64afdb9e2e734b852ce401",
+        "android_client_info": {
+          "package_name": "com.example.weather_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDvjtOL7gC1VKG-DrZq27bTiL0dkh0ycY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

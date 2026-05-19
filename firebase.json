@@ -1,0 +1,67 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "rainify-4d64e",
+          "appId": "1:895812912916:android:64afdb9e2e734b852ce401",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "ios": {
+        "default": {
+          "projectId": "rainify-4d64e",
+          "appId": "1:895812912916:ios:83b8b5ffcf02d7612ce401",
+          "uploadDebugSymbols": false,
+          "fileOutput": "ios/Runner/GoogleService-Info.plist"
+        }
+      },
+      "macos": {
+        "default": {
+          "projectId": "rainify-4d64e",
+          "appId": "1:895812912916:ios:83b8b5ffcf02d7612ce401",
+          "uploadDebugSymbols": false,
+          "fileOutput": "macos/Runner/GoogleService-Info.plist"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "rainify-4d64e",
+          "configurations": {
+            "android": "1:895812912916:android:64afdb9e2e734b852ce401",
+            "ios": "1:895812912916:ios:83b8b5ffcf02d7612ce401",
+            "macos": "1:895812912916:ios:83b8b5ffcf02d7612ce401",
+            "web": "1:895812912916:web:3b3271d7a47b2d682ce401",
+            "windows": "1:895812912916:web:a5ab51b8833e9f3a2ce401"
+          }
+        }
+      }
+    }
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "disallowLegacyRuntimeConfig": true,
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "*.local"
+      ],
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run lint"
+      ]
+    }
+  ],
+  "auth": {
+    "providers": {
+      "emailPassword": true,
+      "googleSignIn": {
+        "oAuthBrandDisplayName": "Rainify",
+        "supportEmail": "developercolonydc@gmail.com"
+      }
+    }
+  }
+}
