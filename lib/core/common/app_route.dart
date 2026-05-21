@@ -29,10 +29,12 @@ GoRouter router = GoRouter(
     ),
     GoRoute(
       path: RouteName.loginScreen,
+      name: "Login",
       builder: (context, state) => LoginScreen(),
     ),
     GoRoute(
       path: RouteName.registerScreen,
+      name: "Register",
       builder: (context, state) => RegisterScreen(),
     ),
     GoRoute(

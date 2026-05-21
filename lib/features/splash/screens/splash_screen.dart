@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -30,7 +31,17 @@ class _SplashScreenState extends State<SplashScreen>
 
     if (!mounted) return;
 
-    context.go(RouteName.loginScreen);
+    FirebaseAuth.instance.userChanges().listen((User? user) {
+      if (user != null) {
+        if (mounted) {
+          context.go(RouteName.dashboardScreen);
+        }
+      } else {
+        if (mounted) {
+          context.go(RouteName.loginScreen);
+        }
+      }
+    });
   }
 
   @override

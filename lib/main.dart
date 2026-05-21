@@ -8,6 +8,18 @@ import 'package:rainify/features/dashboard/data/reprository/dashboard_repo.dart'
 import 'package:rainify/features/forecast/bloc/bloc.dart';
 import 'package:rainify/features/forecast/data/provider/forecast_provider.dart';
 import 'package:rainify/features/forecast/data/reprository/forecast_repo.dart';
+import 'package:rainify/features/forgotpassword/bloc/bloc.dart';
+import 'package:rainify/features/forgotpassword/data/provider/forgot_password_provider.dart';
+import 'package:rainify/features/forgotpassword/data/reprository/forgot_password_repo.dart';
+import 'package:rainify/features/login/bloc/bloc.dart';
+import 'package:rainify/features/login/data/provider/login_provider.dart';
+import 'package:rainify/features/login/data/repository/login_repo.dart';
+import 'package:rainify/features/register/bloc/bloc.dart';
+import 'package:rainify/features/register/data/provider/register_provider.dart';
+import 'package:rainify/features/register/data/repository/register_repo.dart';
+import 'package:rainify/features/settings/bloc/bloc.dart';
+import 'package:rainify/features/settings/data/provider/settings_provider.dart';
+import 'package:rainify/features/settings/data/repository/settings_repo.dart';
 import 'package:rainify/firebase_options.dart';
 
 import 'core/common/app_route.dart' show router;
@@ -35,6 +47,22 @@ class MyApp extends StatelessWidget {
           create: (context) =>
               ForecastRepository(forcastProvider: ForecastProvider()),
         ),
+        RepositoryProvider(
+          create: (context) =>
+              RegisterRepository(registerProvider: RegisterProvider()),
+        ),
+        RepositoryProvider(
+          create: (context) => LoginRepository(loginProvider: LoginProvider()),
+        ),
+        RepositoryProvider(
+          create: (context) =>
+              SettingsRepository(settingsProvider: SettingsProvider()),
+        ),
+        RepositoryProvider(
+          create: (context) => ForgotPasswordRepository(
+            forgotPasswordProvider: ForgotPasswordProvider(),
+          ),
+        ),
       ],
       child: MultiBlocProvider(
         providers: [
@@ -45,6 +73,21 @@ class MyApp extends StatelessWidget {
           BlocProvider(
             create: (context) =>
                 ForecastBloc(context.read<ForecastRepository>()),
+          ),
+          BlocProvider(
+            create: (context) =>
+                RegisterBloc(context.read<RegisterRepository>()),
+          ),
+          BlocProvider(
+            create: (context) => LoginBloc(context.read<LoginRepository>()),
+          ),
+          BlocProvider(
+            create: (context) =>
+                SettingBloc(context.read<SettingsRepository>()),
+          ),
+          BlocProvider(
+            create: (context) =>
+                ForgotPasswordBloc(context.read<ForgotPasswordRepository>()),
           ),
         ],
         child: MaterialApp.router(

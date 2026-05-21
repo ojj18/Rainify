@@ -1,11 +1,11 @@
 import '../model/forcast_main_model.dart';
 import '../provider/dashboard_provider.dart';
 
-abstract class IforcasrRepository {
+abstract class IforcastRepository {
   Future<ForcastModel> getForCastData({required String city});
 }
 
-class DashboardRepository implements IforcasrRepository {
+class DashboardRepository implements IforcastRepository {
   final DashboardProvider dashboardProvider;
 
   const DashboardRepository({required this.dashboardProvider});
