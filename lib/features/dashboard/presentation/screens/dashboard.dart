@@ -167,106 +167,109 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                         ],
                                       ),
                                     ),
-
-                                    Expanded(
-                                      child: Column(
-                                        mainAxisAlignment: .end,
-                                        crossAxisAlignment: .end,
-                                        children: [
-                                          Text(
-                                            "High / Low".toUpperCase(),
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .titleMedium!
-                                                .copyWith(letterSpacing: 0),
-                                          ),
-                                          const SizedBox(height: 5.0),
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.end,
-                                            children: [
-                                              Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.end,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    forcastData
-                                                        .forecast!
-                                                        .forecastday!
-                                                        .first
-                                                        .day!
-                                                        .maxtempC
-                                                        .toString(),
-                                                    style: Theme.of(
-                                                      context,
-                                                    ).textTheme.titleSmall,
-                                                  ),
-                                                  const SizedBox(width: 1),
-                                                  Align(
-                                                    alignment:
-                                                        Alignment.topCenter,
-                                                    child: Text(
-                                                      "o",
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .titleSmall!
-                                                          .copyWith(
-                                                            fontSize: 15.0,
-                                                          ),
+                                    if (forcastData
+                                        .forecast!
+                                        .forecastday!
+                                        .isNotEmpty)
+                                      Expanded(
+                                        child: Column(
+                                          mainAxisAlignment: .end,
+                                          crossAxisAlignment: .end,
+                                          children: [
+                                            Text(
+                                              "High / Low".toUpperCase(),
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .titleMedium!
+                                                  .copyWith(letterSpacing: 0),
+                                            ),
+                                            const SizedBox(height: 5.0),
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.end,
+                                              children: [
+                                                Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.end,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      forcastData
+                                                          .forecast!
+                                                          .forecastday!
+                                                          .first
+                                                          .day!
+                                                          .maxtempC
+                                                          .toString(),
+                                                      style: Theme.of(
+                                                        context,
+                                                      ).textTheme.titleSmall,
                                                     ),
-                                                  ),
-                                                ],
-                                              ),
-                                              Text(
-                                                "/",
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .titleSmall!
-                                                    .copyWith(
-                                                      letterSpacing: 10,
+                                                    const SizedBox(width: 1),
+                                                    Align(
+                                                      alignment:
+                                                          Alignment.topCenter,
+                                                      child: Text(
+                                                        "o",
+                                                        style: Theme.of(context)
+                                                            .textTheme
+                                                            .titleSmall!
+                                                            .copyWith(
+                                                              fontSize: 15.0,
+                                                            ),
+                                                      ),
                                                     ),
-                                              ),
-                                              Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.end,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    forcastData
-                                                        .forecast!
-                                                        .forecastday!
-                                                        .first
-                                                        .day!
-                                                        .mintempC
-                                                        .toString(),
-                                                    style: Theme.of(
-                                                      context,
-                                                    ).textTheme.titleSmall,
-                                                  ),
-                                                  const SizedBox(width: 1),
-                                                  Align(
-                                                    alignment:
-                                                        Alignment.topCenter,
-                                                    child: Text(
-                                                      "o",
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .titleSmall!
-                                                          .copyWith(
-                                                            fontSize: 15.0,
-                                                          ),
+                                                  ],
+                                                ),
+                                                Text(
+                                                  "/",
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .titleSmall!
+                                                      .copyWith(
+                                                        letterSpacing: 10,
+                                                      ),
+                                                ),
+                                                Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.end,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      forcastData
+                                                          .forecast!
+                                                          .forecastday!
+                                                          .first
+                                                          .day!
+                                                          .mintempC
+                                                          .toString(),
+                                                      style: Theme.of(
+                                                        context,
+                                                      ).textTheme.titleSmall,
                                                     ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ],
-                                          ),
-                                        ],
+                                                    const SizedBox(width: 1),
+                                                    Align(
+                                                      alignment:
+                                                          Alignment.topCenter,
+                                                      child: Text(
+                                                        "o",
+                                                        style: Theme.of(context)
+                                                            .textTheme
+                                                            .titleSmall!
+                                                            .copyWith(
+                                                              fontSize: 15.0,
+                                                            ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
                                       ),
-                                    ),
                                   ],
                                 ),
                                 Divider(height: 50.0),

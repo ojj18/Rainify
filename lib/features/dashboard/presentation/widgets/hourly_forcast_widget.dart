@@ -16,13 +16,15 @@ class _HourlyForcaseWidgetState extends State<HourlyForcaseWidget> {
   List<Hour> filteredHours = [];
   @override
   void initState() {
-    filteredHours = widget.forcastData.forecast!.forecastday!.first.hour!.where(
-      (item) {
-        final itemTime = DateTime.parse(item.time!);
+    if (widget.forcastData.forecast!.forecastday!.isNotEmpty) {
+      filteredHours = widget.forcastData.forecast!.forecastday!.first.hour!
+          .where((item) {
+            final itemTime = DateTime.parse(item.time!);
 
-        return itemTime.isAfter(DateTime.now());
-      },
-    ).toList();
+            return itemTime.isAfter(DateTime.now());
+          })
+          .toList();
+    }
     super.initState();
   }
 

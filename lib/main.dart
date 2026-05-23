@@ -14,6 +14,9 @@ import 'package:rainify/features/forgotpassword/data/reprository/forgot_password
 import 'package:rainify/features/login/bloc/bloc.dart';
 import 'package:rainify/features/login/data/provider/login_provider.dart';
 import 'package:rainify/features/login/data/repository/login_repo.dart';
+import 'package:rainify/features/radar/bloc/bloc.dart';
+import 'package:rainify/features/radar/data/provider/radar_provider.dart';
+import 'package:rainify/features/radar/data/reprository/radar_repo.dart';
 import 'package:rainify/features/register/bloc/bloc.dart';
 import 'package:rainify/features/register/data/provider/register_provider.dart';
 import 'package:rainify/features/register/data/repository/register_repo.dart';
@@ -63,6 +66,9 @@ class MyApp extends StatelessWidget {
             forgotPasswordProvider: ForgotPasswordProvider(),
           ),
         ),
+        RepositoryProvider(
+          create: (context) => RadarRepository(radarProvider: RadarProvider()),
+        ),
       ],
       child: MultiBlocProvider(
         providers: [
@@ -88,6 +94,9 @@ class MyApp extends StatelessWidget {
           BlocProvider(
             create: (context) =>
                 ForgotPasswordBloc(context.read<ForgotPasswordRepository>()),
+          ),
+          BlocProvider(
+            create: (context) => RadarBloc(context.read<RadarRepository>()),
           ),
         ],
         child: MaterialApp.router(
